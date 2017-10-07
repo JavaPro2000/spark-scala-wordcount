@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Scala template
+*.log
+/output
+/.idea
+/spark-scala-wordcount.iml
+/spark-warehouse
+/target
+/tmp
