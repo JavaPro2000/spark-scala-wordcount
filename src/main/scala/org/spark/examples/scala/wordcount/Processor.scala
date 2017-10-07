@@ -1,8 +1,8 @@
-package com.spark.wordcount
+package org.spark.examples.scala.wordcount
 
-import com.spark.util.HDFSUtils
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
+import org.spark.examples.scala.util.HDFSUtils
 
 object Processor {
   def process(spark: SparkSession, input: String, output: String): Unit = {

@@ -1,7 +1,7 @@
-package com.spark.wordcount
+package org.spark.examples.scala.wordcount
 
-import com.spark.util.SparkUtils
 import org.apache.spark.sql.SparkSession
+import org.spark.examples.scala.util.SparkUtils
 
 object Main {
   def main(args: Array[String]) {
