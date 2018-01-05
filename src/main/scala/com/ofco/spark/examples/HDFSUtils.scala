@@ -1,4 +1,4 @@
-package org.spark.examples.scala.util
+package com.ofco.spark.examples
 
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.{FileSystem, Path}

@@ -1,4 +1,4 @@
-package org.spark.examples.scala.util
+package com.ofco.spark.examples
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
@@ -12,6 +12,7 @@ object SparkUtils {
       .builder
       .config(conf)
       .getOrCreate()
+
     spark
   }
 }

@@ -1,9 +1,8 @@
-package org.spark.examples.scala.wordcount
+package com.ofco.spark.examples
 
 import org.apache.spark.sql.SparkSession
-import org.spark.examples.scala.util.SparkUtils
 
-object Main {
+object ScalaWordCount {
   def main(args: Array[String]) {
     if (args.length < 2) {
       System.err.println("Usage: <input file> <output file>")
@@ -13,7 +12,7 @@ object Main {
     val input: String = args(0)
     val output: String = args(1)
 
-    val spark: SparkSession = SparkUtils.init("Spark Scala Wordcount")
+    val spark: SparkSession = SparkUtils.init("Spark Scala WordCount")
 
     Processor.process(spark, input, output)
 
