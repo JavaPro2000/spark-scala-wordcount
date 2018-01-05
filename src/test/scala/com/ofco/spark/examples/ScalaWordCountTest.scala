@@ -12,7 +12,7 @@ class ScalaWordCountTest extends FunSuite with BeforeAndAfter {
   }
 
   before {
-    SparkTestUtil.initTestEnv()
+    SparkTestUtils.initTestEnv()
   }
 
 }

@@ -1,6 +1,6 @@
 package com.ofco.spark.examples
 
-object SparkTestUtil {
+object SparkTestUtils {
   def initTestEnv() {
     val user_dir = System.getProperty("user.dir").replace('\\', '/')
     val spark_hive_warehouse_dir = "file:///" + user_dir + "/tmp/spark-hive"
