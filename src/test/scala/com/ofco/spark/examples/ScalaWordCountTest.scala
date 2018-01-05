@@ -1,6 +1,6 @@
 package com.ofco.spark.examples
 
-import org.scalatest.{BeforeAndAfter, BeforeAndAfterEach, FunSuite}
+import org.scalatest.{BeforeAndAfter, FunSuite}
 
 class ScalaWordCountTest extends FunSuite with BeforeAndAfter {
 

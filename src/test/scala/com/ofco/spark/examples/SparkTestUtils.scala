@@ -1,8 +1,10 @@
 package com.ofco.spark.examples
 
-import org.apache.commons.exec.CommandLine
-import org.apache.commons.lang3.SystemUtils
 import java.io.File
+
+import org.apache.commons.exec.{CommandLine, DefaultExecutor}
+import org.apache.commons.io.FileUtils
+import org.apache.commons.lang3.SystemUtils
 
 object SparkTestUtils {
   def initTestEnv() {
@@ -17,9 +19,6 @@ object SparkTestUtils {
 
     initTmpFolder(user_dir)
   }
-
-  import org.apache.commons.exec.DefaultExecutor
-  import org.apache.commons.io.FileUtils
 
   private def initTmpFolder(user_dir: String): Unit = {
     try {
