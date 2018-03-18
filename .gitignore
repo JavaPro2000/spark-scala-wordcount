@@ -1,7 +1,9 @@
-*.log
-/output
-/.idea
+# Build related files
+/target/
+
+# IntelliJ Related files
+/.idea/
 /spark-scala-wordcount.iml
-/spark-warehouse
-/target
-/tmp
+
+# Other files
+/tmp/
