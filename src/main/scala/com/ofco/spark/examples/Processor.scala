@@ -11,15 +11,13 @@ object Processor {
   }
 
   def extract(spark: SparkSession, input: String): RDD[String] = {
-    val lines: RDD[String] = spark.sparkContext.textFile(input)
-    lines
+    spark.sparkContext.textFile(input)
   }
 
   def transform(lines: RDD[String]): RDD[(String, Long)] = {
-    val words: RDD[String] = lines.flatMap(line => line.split(' '))
-    val ones: RDD[(String, Long)] = words.map(word => (word, 1))
-    val counts: RDD[(String, Long)] = ones.reduceByKey((a, b) => a + b)
-    counts
+    lines.flatMap(line => line.split(' ')) //Get words
+      .map(word => (word, 1l)) // Get ones
+      .reduceByKey((a, b) => a + b) // Get counts
   }
 
   def load(counts: RDD[(String, Long)], output: String): Unit = {
