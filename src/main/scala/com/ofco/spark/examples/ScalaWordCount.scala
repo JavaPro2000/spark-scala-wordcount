@@ -1,6 +1,7 @@
 package com.ofco.spark.examples
 
-import org.apache.spark.sql.SparkSession
+import com.ofco.spark.examples.SparkUtils.{init, tryWithResource}
+import com.ofco.spark.examples.Processor.process
 
 object ScalaWordCount {
   def main(args: Array[String]) {
@@ -12,10 +13,8 @@ object ScalaWordCount {
     val input: String = args(0)
     val output: String = args(1)
 
-    val spark: SparkSession = SparkUtils.init("Spark Scala WordCount")
-
-    Processor.process(spark, input, output)
-
-    spark.stop()
+    tryWithResource(init("Spark Scala WordCount")) {
+      spark => process(spark, input, output)
+    }
   }
 }

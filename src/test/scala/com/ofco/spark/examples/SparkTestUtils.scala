@@ -23,14 +23,17 @@ object SparkTestUtils {
   private def initTmpFolder(user_dir: String): Unit = {
     val tmp_folder = user_dir + "/tmp"
     val file = new File(tmp_folder)
-    if (file.exists) FileUtils.deleteDirectory(file)
+    if (file.exists)
+      FileUtils.deleteDirectory(file)
     file.mkdir
     var line = "chmod -R 777 " + tmp_folder
     val IS_WINDOWS = SystemUtils.IS_OS_WINDOWS
-    if (IS_WINDOWS) line = user_dir + "/hadoop/bin/winutils.exe " + line
+    if (IS_WINDOWS)
+      line = user_dir + "/hadoop/bin/winutils.exe " + line
     val cmd_line = CommandLine.parse(line)
     val executor = new DefaultExecutor
     val exit_value = executor.execute(cmd_line)
-    if (exit_value != 0) throw new Exception("Error while executing chmod on tmp folder => " + tmp_folder)
+    if (exit_value != 0)
+      throw new Exception("Error while executing chmod on tmp folder => " + tmp_folder)
   }
 }
