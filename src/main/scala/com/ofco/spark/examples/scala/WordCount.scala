@@ -1,9 +1,9 @@
-package com.ofco.spark.examples
+package com.ofco.spark.examples.scala
 
-import com.ofco.spark.examples.SparkUtils.{init, tryWithResource}
-import com.ofco.spark.examples.Processor.process
+import com.ofco.spark.examples.scala.Processor.process
+import com.ofco.spark.examples.scala.SparkUtils.{init, tryWithResource}
 
-object ScalaWordCount {
+object WordCount {
   def main(args: Array[String]) {
     if (args.length < 2) {
       System.err.println("Usage: <input file> <output file>")

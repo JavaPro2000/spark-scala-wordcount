@@ -1,4 +1,4 @@
-package com.ofco.spark.examples
+package com.ofco.spark.examples.scala
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
@@ -15,9 +15,9 @@ object Processor {
   }
 
   def transform(lines: RDD[String]): RDD[(String, Long)] = {
-    lines.flatMap(line => line.split(' ')) //Get words
-      .map(word => (word, 1l)) // Get ones
-      .reduceByKey((a, b) => a + b) // Get counts
+    lines.flatMap(line => line.split(' '))
+      .map(word => (word, 1l))
+      .reduceByKey((a, b) => a + b)
   }
 
   def load(counts: RDD[(String, Long)], output: String): Unit = {

@@ -1,4 +1,4 @@
-package com.ofco.spark.examples
+package com.ofco.spark.examples.scala
 
 import java.io.File
 
@@ -11,7 +11,7 @@ object SparkTestUtils {
     val user_dir = System.getProperty("user.dir").replace('\\', '/')
     val spark_hive_warehouse_dir = "file:///" + user_dir + "/tmp/spark-hive"
 
-    sys.props.put("hadoop.home.dir", user_dir + "/hadoop")
+    sys.props.put("hadoop.home.dir", user_dir + "/dev/hadoop")
     sys.props.put("hive.exec.scratchdir", user_dir + "/tmp/hive/scratch")
     sys.props.put("spark.sql.warehouse.dir", spark_hive_warehouse_dir)
     sys.props.put("spark.local.dir", user_dir + "/tmp/spark/tmp")
@@ -29,7 +29,7 @@ object SparkTestUtils {
     var line = "chmod -R 777 " + tmp_folder
     val IS_WINDOWS = SystemUtils.IS_OS_WINDOWS
     if (IS_WINDOWS)
-      line = user_dir + "/hadoop/bin/winutils.exe " + line
+      line = user_dir + "/dev/hadoop/bin/winutils.exe " + line
     val cmd_line = CommandLine.parse(line)
     val executor = new DefaultExecutor
     val exit_value = executor.execute(cmd_line)
