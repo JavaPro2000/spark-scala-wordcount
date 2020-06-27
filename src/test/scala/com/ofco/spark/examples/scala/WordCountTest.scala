@@ -1,8 +1,9 @@
 package com.ofco.spark.examples.scala
 
-import org.scalatest.{BeforeAndAfter, FunSuite}
+import org.scalatest.BeforeAndAfter
+import org.scalatest.funsuite.AnyFunSuite
 
-class WordCountTest extends FunSuite with BeforeAndAfter {
+class WordCountTest extends AnyFunSuite with BeforeAndAfter {
 
   test("testMain") {
     val input_file = "data/data.txt"
